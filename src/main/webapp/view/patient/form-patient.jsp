@@ -1,7 +1,8 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <html>
 <head>
+    <meta charset="UTF-8" />
     <title>Bệnh nhân - Quản lý phòng khám</title>
 </head>
 <body>
@@ -16,6 +17,7 @@
         color: red;
     }
 </style>
+<jsp:include page="../home.jsp"/>
 <div class="container">
     <h3>Bệnh nhân: </h3>
     <c:if test="${error ne null}">
@@ -48,9 +50,7 @@
 
         <div class="form-group">
             <label class="required" for="Patient Address">Địa chỉ: </label>
-            <textarea class="form-control" id="Patient Address" rows="3" name="address">
-                ${patient.address.trim()}
-            </textarea>
+            <textarea class="form-control" id="Patient Address" rows="3" name="address">${patient.address.trim()}</textarea>
         </div>
 
         <button type="submit" class="btn btn-primary">Lưu lại</button>

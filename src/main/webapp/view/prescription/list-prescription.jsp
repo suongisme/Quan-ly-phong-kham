@@ -34,8 +34,9 @@
         background: white;
     }
 </style>
+<jsp:include page="../home.jsp"/>
 <div style="height: 65px" class="d-flex align-items-center justify-content-between">
-    <a class="btn btn-primary" style="color: white; text-decoration: none" href="${pageContext.request.contextPath}/prescription/form">Create Prescription</a>
+    <a class="btn btn-primary" style="color: white; text-decoration: none" href="${pageContext.request.contextPath}/prescription/form">Tạo mới đơn thuốc</a>
 
     <form class="d-flex" method="get" action="${pageContext.request.contextPath}/prescription//search">
         <input style="min-width: 250px;" class="form-control mr-2" placeholder="Nhập mã bệnh nhân" name="keyword" value="${pageContext.request.getParameter('keyword')}">

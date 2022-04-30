@@ -1,5 +1,5 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" pageEncoding="UTF-8" %>
 <html>
 <head>
     <title>Đơn thuốc</title>
@@ -16,6 +16,9 @@
         color: red;
     }
 </style>
+<c:if test="${readOnly == false}">
+    <jsp:include page="../home.jsp"/>
+</c:if>
 <div class="container">
     <h3>Đơn thuốc: </h3>
     <c:if test="${error ne null}">
@@ -34,9 +37,7 @@
 
         <div class="form-group">
             <label class="required" for="diseases">Bệnh được chuẩn đoán: </label>
-            <textarea class="form-control" id="diseases" rows="3" name="diseases">
-                ${prescription.diseases.trim()}
-            </textarea>
+            <textarea class="form-control" id="diseases" rows="3" name="diseases">${prescription.diseases.trim()}</textarea>
         </div>
 
         <div class="form-group">
@@ -50,9 +51,7 @@
 
         <div class="form-group">
             <label class="required" for="dosage">Liều dùng: </label>
-            <textarea class="form-control" id="dosage" rows="3" name="dosage">
-                ${prescription.diseases.trim()}
-            </textarea>
+            <textarea class="form-control" id="dosage" rows="3" name="dosage">${prescription.diseases.trim()}</textarea>
         </div>
 
         <c:if test="${readOnly == false}">

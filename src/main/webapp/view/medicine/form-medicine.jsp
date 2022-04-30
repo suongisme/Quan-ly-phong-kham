@@ -16,6 +16,7 @@
         color: red;
     }
 </style>
+<jsp:include page="../home.jsp"/>
 <div class="container">
     <h3>Thuốc: </h3>
     <c:if test="${error ne null}">
@@ -55,9 +56,7 @@
 
         <div class="form-group">
             <label class="required" for="Medicine Description">Mô tả: </label>
-            <textarea class="form-control" id="Medicine Description" rows="3" name="description">
-                ${medicine.description.trim()}
-            </textarea>
+            <textarea class="form-control" id="Medicine Description" rows="3" name="description">${medicine.description.trim()}</textarea>
         </div>
 
         <button type="submit" class="btn btn-primary">Lưu lại</button>
