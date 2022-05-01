@@ -1,7 +1,12 @@
 package com.clinic.utils;
 
 import java.io.*;
+import java.net.URISyntaxException;
 import java.net.URL;
+import java.nio.charset.StandardCharsets;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.List;
 import java.util.Objects;
 import java.util.Properties;
@@ -22,11 +27,12 @@ public class SystemUtils {
 
             // load countries file
             URL resource = SystemUtils.class.getResource("/countries.txt");
-            String path = resource.getPath();
-            Reader reader = new FileReader(path);
-            BufferedReader bufferedReader = new BufferedReader(reader);
+            Path path = Paths.get(resource.toURI());
+            BufferedReader bufferedReader = Files.newBufferedReader(path, StandardCharsets.UTF_8);
             countries = bufferedReader.lines().collect(Collectors.toList());
         } catch (IOException e) {
+            e.printStackTrace();
+        } catch (URISyntaxException e) {
             e.printStackTrace();
         }
     }
